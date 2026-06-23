@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { getOrganization } from "@/lib/assoconnect";
 import { createClient } from "@/lib/supabase/server";
 
@@ -45,6 +46,13 @@ export default async function Home() {
         <Image src="/mascot.png" alt="Mascot" width={160} height={160} priority />
         <h1 className="text-4xl font-bold">Padawan Thomas is ready</h1>
       </div>
+
+      <Link
+        href="/rapport"
+        className="bg-black text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-800 transition-colors"
+      >
+        Créer mon rapport d&apos;activité →
+      </Link>
 
       <div className="flex flex-col gap-6 w-full max-w-md">
         <div className="border rounded-xl p-6 flex flex-col gap-3">
