@@ -100,20 +100,20 @@ export default function ChatPage() {
     <div className="max-w-5xl mx-auto px-6 py-10 flex gap-8 h-[calc(100vh-4rem)]">
       <div className="flex-1 flex flex-col gap-4">
         <div>
-          <h1 className="text-2xl font-bold">Discussion avec l&apos;IA</h1>
-          <p className="text-gray-500 text-sm mt-1">
+          <h1 className="text-2xl font-bold text-[#1C1B3A]">Discussion avec l&apos;IA</h1>
+          <p className="text-[#6B6887] text-sm mt-1">
             Répondez aux questions pour structurer votre rapport
           </p>
         </div>
 
-        <div className="flex-1 border rounded-2xl overflow-y-auto p-6 flex flex-col gap-4 bg-gray-50">
+        <div className="flex-1 border border-[#E4E2F0] rounded-2xl overflow-y-auto p-6 flex flex-col gap-4 bg-[#F8F7FF]">
           {messages.map((msg, i) => (
             <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
               <div
                 className={`max-w-[75%] px-4 py-3 rounded-2xl text-sm ${
                   msg.role === "user"
-                    ? "bg-black text-white rounded-br-sm"
-                    : "bg-white border rounded-bl-sm text-gray-800"
+                    ? "bg-[#5C3DD8] text-white rounded-br-sm"
+                    : "bg-white border border-[#E4E2F0] rounded-bl-sm text-[#1C1B3A]"
                 }`}
               >
                 {msg.text}
@@ -130,7 +130,7 @@ export default function ChatPage() {
             className={`shrink-0 w-11 h-11 rounded-full flex items-center justify-center transition-all ${
               isRecording
                 ? "bg-red-500 text-white animate-pulse shadow-lg shadow-red-200"
-                : "border border-gray-300 text-gray-500 hover:border-gray-500 hover:text-gray-800"
+                : "border border-[#E4E2F0] text-[#6B6887] hover:border-[#5C3DD8] hover:text-[#5C3DD8]"
             }`}
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -144,12 +144,12 @@ export default function ChatPage() {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder={isRecording ? "Parlez maintenant…" : "Écrivez ou dictez votre réponse…"}
-            className="flex-1 border rounded-full px-5 py-3 text-sm outline-none focus:ring-2 focus:ring-black"
+            className="flex-1 border border-[#E4E2F0] rounded-full px-5 py-3 text-sm outline-none focus:ring-2 focus:ring-[#5C3DD8]"
           />
           <button
             onClick={sendMessage}
             disabled={!input.trim()}
-            className="shrink-0 bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            className="shrink-0 bg-[#5C3DD8] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#4A2FB8] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
             Envoyer
           </button>
@@ -162,18 +162,18 @@ export default function ChatPage() {
       </div>
 
       <aside className="w-56 shrink-0 flex flex-col gap-4">
-        <div className="border rounded-2xl p-5 flex flex-col gap-3">
-          <h2 className="font-semibold text-sm">Axes à couvrir</h2>
+        <div className="bg-white border border-[#E4E2F0] shadow-sm rounded-2xl p-5 flex flex-col gap-3">
+          <h2 className="font-semibold text-sm text-[#1C1B3A]">Axes à couvrir</h2>
           <ul className="flex flex-col gap-2">
             {AXES.map((axe) => (
-              <li key={axe} className="flex items-center gap-2 text-sm text-gray-600">
-                <span className="w-4 h-4 rounded border border-gray-300 shrink-0" />
+              <li key={axe} className="flex items-center gap-2 text-sm text-[#6B6887]">
+                <span className="w-4 h-4 rounded border border-[#E4E2F0] shrink-0" />
                 {axe}
               </li>
             ))}
           </ul>
         </div>
-        <p className="text-xs text-gray-400 text-center">
+        <p className="text-xs text-[#6B6887] text-center">
           Chaque axe sera coché au fil de la discussion.
         </p>
       </aside>

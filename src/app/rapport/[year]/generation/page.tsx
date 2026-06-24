@@ -23,8 +23,8 @@ export default function GenerationPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-10 flex flex-col gap-10">
       <div>
-        <h1 className="text-2xl font-bold">Génération des formats</h1>
-        <p className="text-gray-500 text-sm mt-1">
+        <h1 className="text-2xl font-bold text-[#1C1B3A]">Génération des formats</h1>
+        <p className="text-[#6B6887] text-sm mt-1">
           Choisissez les formats à exporter
         </p>
       </div>
@@ -37,12 +37,12 @@ export default function GenerationPage() {
         {formats.map((fmt) => (
           <div
             key={fmt.title}
-            className="border rounded-2xl p-6 flex items-center gap-6 opacity-60"
+            className="bg-white border border-[#E4E2F0] shadow-sm rounded-2xl p-6 flex items-center gap-6 opacity-60"
           >
             <span className="text-4xl shrink-0">{fmt.icon}</span>
             <div className="flex-1 flex flex-col gap-1">
-              <h2 className="font-semibold">{fmt.title}</h2>
-              <p className="text-sm text-gray-500">{fmt.description}</p>
+              <h2 className="font-semibold text-[#1C1B3A]">{fmt.title}</h2>
+              <p className="text-sm text-[#6B6887]">{fmt.description}</p>
             </div>
             <button
               disabled
